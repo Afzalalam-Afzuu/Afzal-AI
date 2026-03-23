@@ -1,103 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .hero-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
-        .feature-card {
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .feature-card:hover { transform: translateY(-10px); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Afzal-AI</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f5f7fb;
+    }
+
+    .main-card {
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .input-box {
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .tool-item:hover {
+      background: #f1f1f1;
+    }
+
+    .mic-btn {
+      border: none;
+      background: transparent;
+      font-size: 20px;
+    }
+  </style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">PRO<span class="text-primary">GEN</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3" href="#">Get Started</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Header -->
+<nav class="navbar bg-white shadow-sm px-3">
+  <div class="container-fluid">
+    <span class="navbar-brand fw-bold">Afzal-AI</span>
+    <span class="ms-auto badge bg-primary">Industry v1.0</span>
+     - Afzal-Al.Com
 
-    <section class="hero-section" id="home">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4" data-aos="fade-up">Apne Business ko Next Level Pe Le Jayein</h1>
-            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">Modern designs, fast performance, aur professional code ke saath.</p>
-            <div data-aos="zoom-in" data-aos-delay="400">
-                <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold">Explore More</a>
-            </div>
-        </div>
-    </section>
+    <select id="modelSelect" class="form-select w-auto">
+      <option value="gemini-1.5-flash">Afzal-AI 3 Flash</option>
+      <option value="gemini-1.5-flash-8b">Afzal-AI 2.5 Flash</option>
+      <option value="gemini-1.5-pro">Afzal-AI 3 Pro</option>
+      <option value="gemini-1.5-pro-latest">Afzal-AI 2.5 Pro</option>
+    </select>
+  </div>
+</nav>
 
-    <section class="py-5" id="features">
-        <div class="container my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold" data-aos="fade-down">Hamari Services</h2>
-                <div class="bg-primary mx-auto" style="height: 3px; width: 60px;"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
-                    <div class="feature-card bg-white border text-center">
-                        <h4 class="fw-bold">Fast Speed</h4>
-                        <p class="text-muted">Aapki website load hogi palak jhapakte hi.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                    <div class="feature-card bg-white border text-center">
-                        <h4 class="fw-bold">Responsive</h4>
-                        <p class="text-muted">Mobile, Tablet ya Desktop - har jagah perfect dikhega.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="500">
-                    <div class="feature-card bg-white border text-center">
-                        <h4 class="fw-bold">SEO Friendly</h4>
-                        <p class="text-muted">Google search par top ranking ke liye optimization.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Main -->
+<div class="container py-5">
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2026 ProGen Solutions. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // AOS Initialize
-        AOS.init({
-            duration: 1000, // animation speed
-            once: true,     // scroll karne par sirf ek baar animate hoga
-        });
-    </script>
+      <div class="card main-card p-4 text-center">
+
+        <!-- Greeting -->
+        <h2 id="greeting" class="fw-bold mb-2" style="cursor:pointer;">
+          Hi User
+        </h2>
+
+        <p class="text-muted mb-4">Where should we start?</p>
+
+        <!-- Input -->
+        <div class="input-group mb-3">
+          <input id="inputBox" type="text" class="form-control input-box" placeholder="Ask Afzal AI...">
+          <button id="micBtn" class="btn btn-light">🎤</button>
+        </div>
+
+        <!-- Tools -->
+        <div class="dropdown mb-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            ⚙️ Tools
+          </button>
+
+          <ul class="dropdown-menu text-start">
+
+            <li class="dropdown-item tool-item" data-type="chat">
+              💬 <strong>Smart Chat</strong><br>
+              <small class="text-muted">Ask anything instantly</small>
+            </li>
+
+            <li class="dropdown-item tool-item" data-type="image">
+              📸 <strong>Create Image</strong><br>
+              <small class="text-muted">Generate AI visuals</small>
+            </li>
+
+            <li class="dropdown-item tool-item" data-type="web">
+              🌐 <strong>Web Search</strong><br>
+              <small class="text-muted">Get latest data</small>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Result -->
+        <div id="result" class="text-start"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-white border-top mt-4">
+  <div class="container text-center py-3">
+
+    <div class="fw-semibold">Afzal-AI</div>
+
+    <div class="text-muted small">
+      Smart AI Assistant for Learning & Automation
+    </div>
+
+    <div class="text-muted small mt-1">
+      © 2026 Afzal-AI. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* ================= NAME ================= */
+const greeting = document.getElementById("greeting");
+
+let savedName = localStorage.getItem("username");
+if (savedName) greeting.innerText = "Hi " + savedName;
+
+greeting.onclick = () => {
+  let name = prompt("Enter your name:");
+  if (name) {
+    localStorage.setItem("username", name);
+    greeting.innerText = "Hi " + name;
+  }
+};
+
+/* ================= VOICE ================= */
+const micBtn = document.getElementById("micBtn");
+const inputBox = document.getElementById("inputBox");
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+  const recognition = new SpeechRecognition();
+
+  micBtn.onclick = () => {
+    recognition.start();
+    micBtn.innerText = "🎙️";
+  };
+
+  recognition.onresult = (e) => {
+    inputBox.value = e.results[0][0].transcript;
+  };
+
+  recognition.onend = () => {
+    micBtn.innerText = "🎤";
+  };
+}
+
+/* ================= TOOLS ================= */
+let selectedTool = "chat";
+
+document.querySelectorAll(".tool-item").forEach(item => {
+  item.onclick = () => {
+    selectedTool = item.dataset.type;
+  };
+});
+
+/* ================= API ================= */
+const resultDiv = document.getElementById("result");
+
+async function callGemini(prompt) {
+
+  const model = document.getElementById("modelSelect").value;
+  const API_KEY = "AIzaSyDc_OH3p5yapPhYuL4pSbytdUmjyf4wvSU";
+
+  const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${API_KEY}`;
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }]
+    })
+  });
+
+  const data = await res.json();
+  return data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+}
+
+/* ================= ENTER ================= */
+inputBox.addEventListener("keypress", async (e) => {
+  if (e.key === "Enter") {
+
+    let prompt = inputBox.value;
+    if (!prompt) return;
+
+    resultDiv.innerHTML = `<div class="alert alert-info">Loading...</div>`;
+
+    if (selectedTool === "image") prompt = "Create image: " + prompt;
+    if (selectedTool === "web") prompt = "Search latest: " + prompt;
+
+    const result = await callGemini(prompt);
+
+    resultDiv.innerHTML = `
+      <div class="card p-3 mt-3 shadow-sm">
+        ${result}
+      </div>`;
+  }
+});
+
+</script>
+
 </body>
 </html>
